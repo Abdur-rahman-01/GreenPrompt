@@ -89,6 +89,38 @@ Recommendation: Use Qwen if efficiency critical; Mistral if accuracy worth it
 ```
 **Value**: Model selection clarity. Eliminates guesswork.
 
+
+
+
+
+### Example 1: Simple Math
+Input:  "What's 25 * 4?"
+Route:  Llama-3.2-1B (45J, $0.0001)
+Reason: "Simple arithmetic - SLM is perfect"
+vs GPT-4: Would use 1,200J, $0.03 (96% waste)
+
+### Example 2: Medium Complexity  
+Input:  "Summarize this 500-word article"
+Route:  Mistral-7B (320J, $0.05)
+Reason: "Summarization task - medium model ideal"
+vs GPT-4: Would use 1,800J, $0.30 (82% waste)
+
+### Example 3: High Complexity
+Input:  "Write a complex SQL query with 5 joins and explain optimization"
+Route:  Claude Sonnet (950J, $0.12)
+Reason: "Complex reasoning required - using powerful model"
+vs GPT-4: Only 15% more energy but better quality
+
+### Example 4: Critical Task
+Input:  "Review this legal contract for issues"
+Route:  GPT-4 (1,200J, $0.30)
+Reason: "High-stakes task - using most capable model"
+User override available: Can force GPT-4 for any task
+
+
+
+
+
 ### Feature 3: Team Dashboard (Real-time)
 ```
 Energy Saved (Month): 45.2 kWh ↓ 32%
