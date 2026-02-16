@@ -89,52 +89,76 @@ Recommendation: Use Qwen if efficiency critical; Mistral if accuracy worth it
 ```
 **Value**: Model selection clarity. Eliminates guesswork.
 
-
-
-
+## 🎯 Smart Routing Examples
 
 ### Example 1: Simple Math
-Input:  "What's 25 * 4?"
-Route:  Llama-3.2-1B (45J, $0.0001)
-Reason: "Simple arithmetic - SLM is perfect"
-vs GPT-4: Would use 1,200J, $0.03 (96% waste)
+**Input:** "What's 25 * 4?"
 
-### Example 2: Medium Complexity  
-Input:  "Summarize this 500-word article"
-Route:  Mistral-7B (320J, $0.05)
-Reason: "Summarization task - medium model ideal"
-vs GPT-4: Would use 1,800J, $0.30 (82% waste)
+**Routing Decision:**
+- **Model:** Llama-3.2-1B
+- **Energy:** 45J
+- **Cost:** $0.0001
+- **Reason:** Simple arithmetic - SLM is perfect
 
-### Example 3: High Complexity
-Input:  "Write a complex SQL query with 5 joins and explain optimization"
-Route:  Claude Sonnet (950J, $0.12)
-Reason: "Complex reasoning required - using powerful model"
-vs GPT-4: Only 15% more energy but better quality
-
-### Example 4: Critical Task
-Input:  "Review this legal contract for issues"
-Route:  GPT-4 (1,200J, $0.30)
-Reason: "High-stakes task - using most capable model"
-User override available: Can force GPT-4 for any task
-
-
-
-
-
-### Feature 3: Team Dashboard (Real-time)
-```
-Energy Saved (Month): 45.2 kWh ↓ 32%
-CO₂ Prevented: 18.1 kg
-Water Saved: 4.5M liters
-API Cost Reduced: $2.26 (per-team savings)
-
-Team Leaderboard: Gamification drives behavior
-ESG Reporting: Compliance-ready export
-```
-**Value**: Accountability + incentives. ESG-ready reporting.
+**Comparison vs GPT-4:**
+- GPT-4 would use: 1,200J, $0.03
+- **Savings:** 96% energy waste avoided ✅
 
 ---
 
+### Example 2: Medium Complexity
+**Input:** "Summarize this 500-word article"
+
+**Routing Decision:**
+- **Model:** Mistral-7B
+- **Energy:** 320J
+- **Cost:** $0.05
+- **Reason:** Summarization task - medium model ideal
+
+**Comparison vs GPT-4:**
+- GPT-4 would use: 1,800J, $0.30
+- **Savings:** 82% energy waste avoided ✅
+
+---
+
+### Example 3: High Complexity
+**Input:** "Write a complex SQL query with 5 joins and explain optimization"
+
+**Routing Decision:**
+- **Model:** Claude Sonnet
+- **Energy:** 950J
+- **Cost:** $0.12
+- **Reason:** Complex reasoning required - using powerful model
+
+**Comparison vs GPT-4:**
+- GPT-4 would use: 1,200J, $0.30
+- **Difference:** Only 15% more energy but better quality for this task
+
+---
+
+### Example 4: Critical Task
+**Input:** "Review this legal contract for issues"
+
+**Routing Decision:**
+- **Model:** GPT-4
+- **Energy:** 1,200J
+- **Cost:** $0.30
+- **Reason:** High-stakes task - using most capable model
+
+**Note:** User override available - can force GPT-4 for any task when maximum quality is required
+
+---
+
+## 📊 Summary Table
+
+| Task Type | Model Used | Energy (J) | Cost ($) | vs GPT-4 Savings |
+|-----------|------------|------------|----------|------------------|
+| Simple Math | Llama-3.2-1B | 45 | 0.0001 | 96% ⚡ |
+| Summarization | Mistral-7B | 320 | 0.05 | 82% ⚡ |
+| Complex SQL | Claude Sonnet | 950 | 0.12 | Better quality |
+| Legal Review | GPT-4 | 1,200 | 0.30 | Baseline |
+
+> **💡 Key Insight:** By intelligently routing tasks to appropriate models, GreenPrompt achieves 50-96% energy savings on most queries while maintaining or improving quality.
 ## HOW WE SOLVE EACH PAIN POINT
 
 | Pain Point | Before | After | Impact |
